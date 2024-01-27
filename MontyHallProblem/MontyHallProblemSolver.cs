@@ -1,4 +1,6 @@
-﻿namespace MontyHallProblem;
+﻿using System.Diagnostics;
+
+namespace MontyHallProblem;
 
 public sealed class MontyHallProblemSolver
 {
@@ -31,7 +33,7 @@ public sealed class MontyHallProblemSolver
             return;
         }
 
-        var choices = new List<bool>(_testCases.Length);
+        var wins = 0;
 
         for (int i = 0; i < _testCases.Length; i++)
         {
@@ -40,17 +42,61 @@ public sealed class MontyHallProblemSolver
 
             var before = testCase[choice];
 
-            var lastDoor = testCase[1] ? 1 : 2;
+            var indexOfLastDoor = GetIndexOfLastDoor(choice, testCase);
 
-            var after = strategy == MontyHallStrategy.DoNotChangeDoor ? before : testCase[lastDoor];
-
-            if (after)
+            var finalChoice = strategy switch
             {
-                choices.Add(after);
+                MontyHallStrategy.DoNotChangeDoor => before,
+                MontyHallStrategy.ChangeDoor => testCase[indexOfLastDoor],
+                _ => throw new UnreachableException()
+            };
+
+            if (finalChoice)
+            {
+                wins++;
             }
         }
 
-        Log($"Usage of {strategy} strategy brought you {choices.Count} wins in {_testCases.Length} games", ConsoleColor.Green);
+        Log($"Usage of {strategy} strategy brought you {wins} wins in {_testCases.Length} games", ConsoleColor.Green);
+    }
+
+    /// <summary>
+    /// Compares choice, assumes that Monty Hall showed another failure door and returns index of last untouched door
+    /// <para>
+    /// E.g. Choice == 0, Monty Hall shows door No.1, so returns 2.
+    /// </para>
+    /// </summary>
+    /// <param name="choice"></param>
+    /// <param name="testCase"></param>
+    /// <returns></returns>
+    private static int GetIndexOfLastDoor(int choice, bool[] testCase)
+    {
+        if (choice == 0)
+        {
+            if (testCase[1])
+            {
+                return 1;
+            }
+
+            return 2;
+        }
+
+        if (choice == 1)
+        {
+            if (testCase[2])
+            {
+                return 2;
+            }
+
+            return 0;
+        }
+
+        if (testCase[0])
+        {
+            return 0;
+        }
+
+        return 1;
     }
 
     private static bool ValidateTestCases(bool[][] testCases, int[] choices)
