@@ -5,12 +5,14 @@ VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProblemsAndDilemmas", "ProblemsAndDilemmas.csproj", "{6E5789C2-35B8-43C8-B762-35AE3587AE04}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MontyHallProblem", "..\MontyHallProblem\MontyHallProblem.csproj", "{7FB19A63-49F3-4ECA-BF35-1C20E115DAC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MontyHallProblem", "..\MontyHallProblem\MontyHallProblem.csproj", "{7FB19A63-49F3-4ECA-BF35-1C20E115DAC1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1BB518C6-08A9-4B9D-BE07-E9C84CA3B046}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrisonersDilemma", "..\PrisonersDilemma\PrisonersDilemma.csproj", "{73DE1191-58D8-414C-8173-EDD442CB2A9A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +28,10 @@ Global
 		{7FB19A63-49F3-4ECA-BF35-1C20E115DAC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FB19A63-49F3-4ECA-BF35-1C20E115DAC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FB19A63-49F3-4ECA-BF35-1C20E115DAC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73DE1191-58D8-414C-8173-EDD442CB2A9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73DE1191-58D8-414C-8173-EDD442CB2A9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73DE1191-58D8-414C-8173-EDD442CB2A9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73DE1191-58D8-414C-8173-EDD442CB2A9A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
