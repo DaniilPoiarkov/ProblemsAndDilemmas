@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CollatzConjecture\CollatzConjecture.csproj" />
     <ProjectReference Include="..\MontyHallProblem\MontyHallProblem.csproj" />
   </ItemGroup>
 
