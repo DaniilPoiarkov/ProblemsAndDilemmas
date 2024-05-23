@@ -1,4 +1,4 @@
 ﻿
-using MontyHallProblem;
+using CollatzConjecture;
 
-new MontyHallProblemSolver().Run(MontyHallStrategy.ChangeDoor);
+CollatzConjectureApp.Run(987124);
